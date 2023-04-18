@@ -4,8 +4,47 @@ void main() {
   runApp(const MyApp());
 }
 
+class RowOne extends StatefulWidget {
+  const RowOne({Key? key, Color? colorOne}) : super(key: key);
+
+  @override
+  State<RowOne> createState() => _RowOneState();
+}
+
+class _RowOneState extends State<RowOne> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          color: Color.alphaBlend(Colors.deepOrange, Colors.red),
+          padding: const EdgeInsets.all(30.0),
+          child: const Text("I centered Container"),
+        ),
+        Container(
+          color: Colors.green,
+          padding: const EdgeInsets.all(15.0),
+          child: const Icon(Icons.mail),
+        ),
+        Container(
+          color: Colors.red,
+          padding: const EdgeInsets.all(15.0),
+          child: const Icon(Icons.message),
+        ),
+        Container(
+          color: Colors.blue,
+          padding: const EdgeInsets.all(15.0),
+          child: const Icon(Icons.accessibility),
+        ),
+      ],
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,32 +56,8 @@ class MyApp extends StatelessWidget {
             ),
             body: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      color: Colors.orange,
-                      padding: const EdgeInsets.all(30.0),
-                      child: const Text("I centered Container"),
-                    ),
-                    Container(
-                      color: Colors.green,
-                      padding: const EdgeInsets.all(15.0),
-                      child: const Icon(Icons.mail),
-                    ),
-                    Container(
-                      color: Colors.red,
-                      padding: const EdgeInsets.all(15.0),
-                      child: const Icon(Icons.message),
-                    ),
-                    Container(
-                      color: Colors.blue,
-                      padding: const EdgeInsets.all(15.0),
-                      child: const Icon(Icons.accessibility),
-                    ),
-                  ],
-                ),
+                RowOne(key: super.key, colorOne: Colors.green),
+                RowOne(key: super.key, colorOne: Colors.green),
               ],
             )));
   }
