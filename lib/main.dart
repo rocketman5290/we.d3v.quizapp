@@ -4,61 +4,64 @@ void main() {
   runApp(const MyApp());
 }
 
-class RowOne extends StatefulWidget {
-  const RowOne({Key? key, Color? colorOne}) : super(key: key);
-
-  @override
-  State<RowOne> createState() => _RowOneState();
-}
-
-class _RowOneState extends State<RowOne> {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          color: Color.alphaBlend(Colors.deepOrange, Colors.red),
-          padding: const EdgeInsets.all(30.0),
-          child: const Text("I centered Container"),
-        ),
-        Container(
-          color: Colors.green,
-          padding: const EdgeInsets.all(15.0),
-          child: const Icon(Icons.mail),
-        ),
-        Container(
-          color: Colors.red,
-          padding: const EdgeInsets.all(15.0),
-          child: const Icon(Icons.message),
-        ),
-        Container(
-          color: Colors.blue,
-          padding: const EdgeInsets.all(15.0),
-          child: const Icon(Icons.accessibility),
-        ),
-      ],
-    );
-  }
-}
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
+
+  @override
+  void initState() {
+    // TODO: Call firebase and get data
+    // OR use subscription or CUBIT for data flow
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement widget cleanup
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Cool'),
-              backgroundColor: Colors.blueGrey[900],
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Cool'),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              color: Colors.yellow,
+              padding: const EdgeInsets.all(30.0),
+              child: const Text("I centered Container"),
             ),
-            body: Column(
-              children: [
-                RowOne(key: super.key, colorOne: Colors.green),
-                RowOne(key: super.key, colorOne: Colors.green),
-              ],
-            )));
+            Container(
+              color: Colors.green,
+              padding: const EdgeInsets.all(15.0),
+              child: const Icon(Icons.mail),
+            ),
+            Container(
+              color: Colors.red,
+              padding: const EdgeInsets.all(15.0),
+              child: const Icon(Icons.message),
+            ),
+            Container(
+              color: Colors.blue,
+              padding: const EdgeInsets.all(15.0),
+              child: const Icon(Icons.accessibility),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
