@@ -15,29 +15,33 @@ class MyApp extends StatelessWidget {
               title: const Text('Cool'),
               backgroundColor: Colors.blueGrey[900],
             ),
-            body: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            body: Column(
               children: [
-                Container(
-                  color: Colors.orange,
-                  padding: const EdgeInsets.all(20.0),
-                  child: const Text("I centered Container"),
-                ),
-                Container(
-                  color: Colors.green,
-                  padding: const EdgeInsets.all(15.0),
-                  child: const Icon(Icons.mail),
-                ),
-                Container(
-                  color: Colors.red,
-                  padding: const EdgeInsets.all(15.0),
-                  child: const Icon(Icons.message),
-                ),
-                Container(
-                  color: Colors.blue,
-                  padding: const EdgeInsets.all(15.0),
-                  child: const Icon(Icons.accessibility),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      color: Colors.orange,
+                      padding: const EdgeInsets.all(30.0),
+                      child: const Text("I centered Container"),
+                    ),
+                    Container(
+                      color: Colors.green,
+                      padding: const EdgeInsets.all(15.0),
+                      child: const Icon(Icons.mail),
+                    ),
+                    Container(
+                      color: Colors.red,
+                      padding: const EdgeInsets.all(15.0),
+                      child: const Icon(Icons.message),
+                    ),
+                    Container(
+                      color: Colors.blue,
+                      padding: const EdgeInsets.all(15.0),
+                      child: const Icon(Icons.accessibility),
+                    ),
+                  ],
                 ),
               ],
             )));
